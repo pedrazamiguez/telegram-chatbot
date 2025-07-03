@@ -18,10 +18,14 @@ repositories {
 	mavenCentral()
 }
 
+val telegramBotsVersion = "9.0.0"
+
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
+	implementation("org.telegram:telegrambots-springboot-longpolling-starter:$telegramBotsVersion")
+	implementation("org.telegram:telegrambots-client:$telegramBotsVersion")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
