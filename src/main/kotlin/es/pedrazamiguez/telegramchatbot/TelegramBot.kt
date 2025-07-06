@@ -31,8 +31,21 @@ class TelegramBot(
             val chatId = update.message.chatId.toString()
 
             val responseText = when (messageText.lowercase()) {
-                "/start" -> "Hello! Welcome to my bot. Type /help for more info."
-                "/help" -> "Available commands:\n/start - Start the bot\n/help - Show this help message"
+                "/start" -> """
+                    I'm here to help you book your hair appointment.
+                    You can type /book to start or /help to see options.
+                """.trimIndent()
+                "/help" -> """
+                    Here are some commands you can use:
+                    
+                    /book: Start the booking process.
+                    
+                    /cancel: Cancel your appointment.
+                    
+                    /status: Check the status of your appointment.
+                    
+                    /help: Show this help message.
+                """.trimIndent()
                 else -> "You said: $messageText"
             }
 
